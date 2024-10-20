@@ -1,0 +1,92 @@
+#
+# 	Part of kde-service-menu-reaudio Version 1.0
+# 	Copyright (C) 2024 Lorsoen <fasher99(at)gmail.com>
+#   Based on Giuseppe Benigno's original work <giuseppe.benigno(at)gmail.com>
+#   https://www.egregorion.net/
+#
+# 	This program is free software: you can redistribute it and/or modify
+# 	it under the terms of the GNU General Public License as published by
+# 	the Free Software Foundation, either version 3 of the License, or
+# 	(at your option) any later version.
+#
+# 	This program is distributed in the hope that it will be useful,
+# 	but WITHOUT ANY WARRANTY; without even the implied warranty of
+# 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# 	GNU General Public License for more details.
+#
+# 	You should have received a copy of the GNU General Public License
+# 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+[Desktop Entry]
+Actions=flac;mp3;waw;ogg;convert_custom;formats;_SEPARATOR_;flip;
+X-KDE-Priority=TopLevel
+Name=ReAudio convert and rotate service menu
+ServiceTypes=KonqPopupMenu/Plugin,audio/*
+TryExec=reaudio-kdialog
+Type=Service
+X-KDE-Submenu=ReAudio - Convert
+X-KDE-Submenu[it]=ReAudio - Conversione
+X-KDE-Submenu[pt]=Converter
+X-KDE-Submenu[fr]=Conversion
+
+################################################################################
+
+[Desktop Action flac]
+Exec=reaudio-kdialog convert flac %F
+Icon=audio-flac
+Name=Convert to FLAC
+Name[it]=Converti in FLAC
+Name[pt]=Converter para FLAC
+Name[fr]=Convertir en FLAC
+
+[Desktop Action mp3]
+Exec=reaudio-kdialog convert mp3 %F
+Icon=audio-mp3
+Name=Convert to MP3
+Name[it]=Converti in MP3
+Name[pt]=Converter para MP3
+Name[fr]=Convertir en MP3
+
+[Desktop Action waw]
+Exec=reaudio-kdialog convert waw %F
+Icon=audio-x-flac+ogg
+Name=Convert to WAW
+Name[it]=Converti in WAW
+Name[pt]=Converter para WAW
+Name[fr]=Convertir en WAW
+Comment[fr]=Convertir en WAW
+
+[Desktop Action ogg]
+Exec=reaudio-kdialog convert ogg %F
+Icon=audio-x-xi
+Name=Convert to OGG
+Name[it]=Converti in OGG
+Name[pt]=Converter para OGG
+Name[fr]=Convertir en OGG
+
+[Desktop Action convert_custom]
+Exec=reimage-kdialog convert custom %F
+Icon=audio-x-flac+ogg
+Name=Convert to format ...
+Name[it]=Formato personalizzato ...
+Name[pt]=Formato personalizado ...
+Name[fr]=Convertir en...
+
+[Desktop Action formats]
+Exec=reimage-kdialog convert formats
+Icon=view-list-text
+Name=Formats list
+Name[it]=Elenco formati
+Name[pt]=Lista de formatos
+Name[fr]=Liste de formats
+
+################################################################################
+
+[Desktop Action flip]
+Exec=reimage-kdialog filter aflip %F
+Icon=image-flip-vertical-symbolic
+Name=Invert Audio
+Name[it]=Invert Audio
+Name[pt]=Invert Audio
+Name[fr]=Inverser l'audio
